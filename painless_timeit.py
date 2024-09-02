@@ -36,8 +36,8 @@ def painless_timeit(func):
     Output:
     ```python
     >>> my_function()
-    [my_function->split1]: Took 2.0000 seconds in this split
-    [my_function->split2]: Took 0.5000 seconds in this split
+    [my_function->split1]: Took 2.0000 seconds up until now
+    [my_function->split2]: Took 0.5000 seconds up until now
     [my_function]: Took 3.5000 seconds
     ```
 
@@ -50,7 +50,7 @@ def painless_timeit(func):
             timeit_wrapper.split_time[split] = timeit_wrapper.split_time.get(split, 0) - time.perf_counter()
         def split_end(split):
             timeit_wrapper.split_time[split] += time.perf_counter()
-            print(f'[{func.__name__}->{split}]: Took {timeit_wrapper.split_time[split]:.4f} seconds in this split')
+            print(f'[{func.__name__}->{split}]: Took {timeit_wrapper.split_time[split]:.4f} seconds up until now')
         def pause():
             timeit_wrapper.start_time -= time.perf_counter()
         def resume():

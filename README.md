@@ -4,7 +4,7 @@ A timeit decorator for Python functions that allows for splits measurements insi
 # Installation
 Put the `painless_timeit.py` file inside you project and import it using
 ```python
-from painless_timit import painless_timeit
+from painless_timeit import painless_timeit
 ```
 
 # Usage
